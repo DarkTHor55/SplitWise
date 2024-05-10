@@ -7,10 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.swing.*;
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.security.PrivateKey;
 
 
 @Entity

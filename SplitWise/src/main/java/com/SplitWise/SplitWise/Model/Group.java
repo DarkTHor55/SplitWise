@@ -1,7 +1,7 @@
 package com.SplitWise.SplitWise.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jdk.jfr.Event;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,4 +27,17 @@ public class Group {
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     private List<User> members = new ArrayList<>();
 
+    @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
+    private List<Events> events = new ArrayList<>();
+    public void addEvent(Events event) {
+        if (events.size() >= 10) {
+            throw new RuntimeException("Maximum number of events reached for this group");
+        }
+        events.add(event);
+        event.setGroup(this);
+    }
+    public void removeEvent(Events event) {
+        events.remove(event);
+        event.setGroup(null);
+    }
 }

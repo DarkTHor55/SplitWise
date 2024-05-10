@@ -1,5 +1,6 @@
 package com.SplitWise.SplitWise.Service.impl;
 
+import com.SplitWise.SplitWise.Model.Events;
 import com.SplitWise.SplitWise.Model.Group;
 import com.SplitWise.SplitWise.Model.User;
 import com.SplitWise.SplitWise.Repository.GroupRepository;
@@ -47,6 +48,7 @@ public class GroupServiceImpl implements GroupService {
         }
         return users;
     }
+
 
     @Override
     public Group updateGroup(Group group, Long groupId) {

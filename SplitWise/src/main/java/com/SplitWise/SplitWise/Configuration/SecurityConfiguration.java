@@ -22,7 +22,7 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(registry ->
                         registry
-                                .requestMatchers("/user/**","/groups/**").permitAll()
+                                .requestMatchers("/user/**","/groups/**","/event/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .build();

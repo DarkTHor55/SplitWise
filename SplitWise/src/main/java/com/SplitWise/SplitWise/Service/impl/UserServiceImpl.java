@@ -55,7 +55,6 @@ public class UserServiceImpl implements UserService {
             user.setUserId(userId);
             userRepository.deleteById(userId);
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-            user.setPayable(0.0);
             return userRepository.save(user);
         }
         return null;
